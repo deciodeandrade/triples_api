@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'sparql/client'
+
 class UsersController < ApplicationController
   def index
     users = User.all
@@ -27,6 +30,18 @@ class UsersController < ApplicationController
     end
 
     render plain: graph.dump(:rdfxml), content_type: 'application/rdf+xml'
+  end
+
+  def rdf_test
+    query = params[:query]
+
+    client = SPARQL::Client.new("http://localhost:3030/SystemDesignOntology2Layers/")
+    results = client.query(query)
+
+    render json: results.to_json, status: :ok
+  rescue => e
+    puts e.message
+    render json: { error: e.message }, status: :unprocessable_entity
   end
 
   def posts

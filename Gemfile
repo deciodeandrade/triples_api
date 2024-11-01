@@ -17,6 +17,10 @@ gem 'rdf-rdfxml'
 gem 'rdf-turtle'
 gem 'rdf-vocab'
 
+gem 'sparql-client'
+gem 'rdf-sparql'
+gem 'sparql'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 

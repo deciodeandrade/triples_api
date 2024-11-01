@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     collection do
       get 'rdf'
       get 'posts'
+      get 'rdf_test'
     end
   end
 end

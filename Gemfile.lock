@@ -73,6 +73,7 @@ GEM
       msgpack (~> 1.2)
     builder (3.3.0)
     concurrent-ruby (1.3.4)
+    connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.4)
     debug (1.9.2)
@@ -95,6 +96,7 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     link_header (0.0.8)
+    logger (1.6.1)
     loofah (2.23.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -109,6 +111,8 @@ GEM
     mini_mime (1.1.5)
     minitest (5.25.1)
     msgpack (1.7.3)
+    net-http-persistent (4.0.4)
+      connection_pool (~> 2.2)
     net-imap (0.5.0)
       date
       net-protocol
@@ -163,11 +167,15 @@ GEM
       bcp47_spec (~> 0.2)
       bigdecimal (~> 3.1, >= 3.1.5)
       link_header (~> 0.0, >= 0.0.8)
+    rdf-aggregate-repo (3.3.0)
+      rdf (~> 3.3)
     rdf-rdfxml (3.3.0)
       builder (~> 3.2, >= 3.2.4)
       htmlentities (~> 4.3)
       rdf (~> 3.3)
       rdf-xsd (~> 3.3)
+    rdf-sparql (0.0.2)
+      rdf (>= 0.1.1)
     rdf-turtle (3.3.1)
       base64 (~> 0.2)
       bigdecimal (~> 3.1, >= 3.1.5)
@@ -184,6 +192,18 @@ GEM
       io-console (~> 0.5)
     rexml (3.3.9)
     scanf (1.0.0)
+    sparql (3.3.1)
+      builder (~> 3.2, >= 3.2.4)
+      ebnf (~> 2.5)
+      logger (~> 1.5)
+      rdf (~> 3.3)
+      rdf-aggregate-repo (~> 3.3)
+      rdf-xsd (~> 3.3)
+      sparql-client (~> 3.3)
+      sxp (~> 2.0)
+    sparql-client (3.3.0)
+      net-http-persistent (~> 4.0, >= 4.0.2)
+      rdf (~> 3.3)
     stringio (3.1.1)
     sxp (2.0.0)
       matrix (~> 0.4)
@@ -209,8 +229,11 @@ DEPENDENCIES
   rails (~> 7.0.8, >= 7.0.8.4)
   rdf
   rdf-rdfxml
+  rdf-sparql
   rdf-turtle
   rdf-vocab
+  sparql
+  sparql-client
   tzinfo-data
 
 RUBY VERSION
