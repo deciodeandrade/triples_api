@@ -4,7 +4,6 @@ Rails.application.routes.draw do
       get 'rdf'
       get 'posts'
       get 'rdf_test'
-      get 'rdf_test_2'
     end
   end
 end

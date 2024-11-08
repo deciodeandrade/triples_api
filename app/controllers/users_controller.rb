@@ -37,20 +37,6 @@ class UsersController < ApplicationController
   def rdf_test
     query = params[:query]
 
-    repository = RDF::Repository.load("etc/users.ttl")
-    client = SPARQL::Client.new(repository)
-
-    results = client.query(query)
-
-    render json: results.to_json, status: :ok
-  rescue => e
-    puts e.message
-    render json: { error: e.message }, status: :unprocessable_entity
-  end
-
-  def rdf_test_2
-    query = params[:query]
-
     client = SPARQL::Client.new(users_graph)
     results = client.query(query)
   
