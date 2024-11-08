@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     collection do
       get 'rdf'
       get 'posts'
-      get 'rdf_test'
+      get 'execute_sparql_query'
     end
   end
 end

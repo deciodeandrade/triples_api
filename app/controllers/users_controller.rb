@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     render plain: graph.dump(:rdfxml), content_type: 'application/rdf+xml'
   end
 
-  def rdf_test
+  def execute_sparql_query
     query = params[:query]
 
     client = SPARQL::Client.new(users_graph)
