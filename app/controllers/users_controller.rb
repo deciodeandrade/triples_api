@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sparql/client'
-require 'rdf/trig'
 require 'rdf/turtle'
+require 'rdf/vocab'
 
 class UsersController < ApplicationController
   def index

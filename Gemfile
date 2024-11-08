@@ -12,15 +12,10 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
-gem 'rdf'
-gem 'rdf-rdfxml'
-gem 'rdf-turtle'
-gem 'rdf-vocab'
-gem 'rdf-trig'
-
-gem 'sparql-client'
-gem 'rdf-sparql'
-gem 'sparql'
+gem 'rdf', '3.3.2'
+gem 'sparql', '3.3.1'
+gem 'rdf-turtle', '3.3.1'
+gem 'rdf-vocab', '3.3.2'
 
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
