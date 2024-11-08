@@ -132,6 +132,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.10)
+    rack-cors (2.0.2)
+      rack (>= 2.0.0)
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (7.0.8.6)
@@ -176,12 +178,16 @@ GEM
       rdf-xsd (~> 3.3)
     rdf-sparql (0.0.2)
       rdf (>= 0.1.1)
+    rdf-trig (3.3.0)
+      ebnf (~> 2.4)
+      rdf (~> 3.3)
+      rdf-turtle (~> 3.3)
     rdf-turtle (3.3.1)
       base64 (~> 0.2)
       bigdecimal (~> 3.1, >= 3.1.5)
       ebnf (~> 2.5)
       rdf (~> 3.3)
-    rdf-vocab (3.3.1)
+    rdf-vocab (3.3.2)
       rdf (~> 3.3)
     rdf-xsd (3.3.0)
       rdf (~> 3.3)
@@ -226,10 +232,12 @@ DEPENDENCIES
   debug
   pg (~> 1.1)
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.8, >= 7.0.8.4)
   rdf
   rdf-rdfxml
   rdf-sparql
+  rdf-trig
   rdf-turtle
   rdf-vocab
   sparql

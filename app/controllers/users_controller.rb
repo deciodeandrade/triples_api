@@ -1,5 +1,7 @@
 require 'rubygems'
 require 'sparql/client'
+require 'rdf/trig'
+require 'rdf/turtle'
 
 class UsersController < ApplicationController
   def index
@@ -35,7 +37,9 @@ class UsersController < ApplicationController
   def rdf_test
     query = params[:query]
 
-    client = SPARQL::Client.new("http://localhost:3030/SystemDesignOntology2Layers/")
+    repository = RDF::Repository.load("etc/users.ttl")
+    client = SPARQL::Client.new(repository)
+
     results = client.query(query)
 
     render json: results.to_json, status: :ok
@@ -43,6 +47,18 @@ class UsersController < ApplicationController
     puts e.message
     render json: { error: e.message }, status: :unprocessable_entity
   end
+
+  def rdf_test_2
+    query = params[:query]
+
+    client = SPARQL::Client.new(users_graph)
+    results = client.query(query)
+  
+    render json: results.to_json, status: :ok
+  rescue => e
+    puts e.message
+    render json: { error: e.message }, status: :unprocessable_entity
+  end 
 
   def posts
     posts = Post.includes(:user).all
@@ -64,6 +80,19 @@ class UsersController < ApplicationController
   end
 
   private
+
+  # Cria o grafo RDF com os dados dos usuários
+  def users_graph
+    graph = RDF::Graph.new
+    
+    User.all.each do |user|
+      user.to_rdf.each_statement do |statement|
+        graph << statement
+      end
+    end
+
+    graph
+  end
 
   # Formata o objeto corretamente, com <> para URIs e aspas para literais
   def format_object(object)

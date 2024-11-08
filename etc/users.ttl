@@ -1,0 +1,6 @@
+<http://example.org/users/1> <http://xmlns.com/foaf/0.1/name> "Décio" .
+<http://example.org/users/1> <http://xmlns.com/foaf/0.1/mbox> <mailto:decio@example.com> .
+<http://example.org/users/2> <http://xmlns.com/foaf/0.1/name> "Ana" .
+<http://example.org/users/2> <http://xmlns.com/foaf/0.1/mbox> <mailto:ana@example.com> .
+<http://example.org/users/3> <http://xmlns.com/foaf/0.1/name> "João" .
+<http://example.org/users/3> <http://xmlns.com/foaf/0.1/mbox> <mailto:joao@example.com> .
