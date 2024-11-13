@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_25_034907) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_13_215236) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "errors", force: :cascade do |t|
+    t.string "description"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "incidents", force: :cascade do |t|
+    t.string "robot"
+    t.string "treatment_id"
+    t.string "status"
+    t.string "recovery"
+    t.datetime "date_time"
+    t.float "percentage"
+    t.string "error_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
@@ -21,6 +40,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_25_034907) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "robots", force: :cascade do |t|
+    t.string "site_name"
+    t.string "site_id"
+    t.string "robot_id"
+    t.string "display_name"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
