@@ -17,6 +17,7 @@ gem 'sparql', '3.3.1'
 gem 'rdf-turtle', '3.3.1'
 gem 'rdf-vocab', '3.3.2'
 
+gem 'roo'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
