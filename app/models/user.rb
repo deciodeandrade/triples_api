@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  require 'rdf/vocab'  # Certifique-se de que o vocabulário está sendo carregado
+  require 'rdf/vocab'
 
   def to_rdf
     # Cria um grafo RDF para o usuário

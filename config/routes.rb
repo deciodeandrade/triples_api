@@ -6,4 +6,10 @@ Rails.application.routes.draw do
       get 'execute_sparql_query'
     end
   end
+
+  resources :incidents, only: [] do
+    collection do
+      get 'execute_sparql_query'
+    end
+  end
 end
