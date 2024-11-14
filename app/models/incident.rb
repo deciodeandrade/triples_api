@@ -13,6 +13,8 @@ class Incident < ApplicationRecord
     graph << [incident_uri, RDF::URI("http://example.org/vocab#percentage"), RDF::Literal(percentage)]
     graph << [incident_uri, RDF::URI("http://example.org/vocab#errorCode"), RDF::Literal(error_code)]
 
+    graph << [incident_uri, RDF::URI("http://www.w3.org/2002/07/owl#sameAs"), incident_uri]
+
     graph
   end
 end

@@ -11,6 +11,8 @@ class Robot < ApplicationRecord
     graph << [robot_uri, RDF::URI("http://example.org/vocab#displayName"), RDF::Literal(display_name)]
     graph << [robot_uri, RDF::URI("http://example.org/vocab#type"), RDF::Literal(robot_type)]
 
+    graph << [robot_uri, RDF::URI("http://www.w3.org/2002/07/owl#sameAs"), robot_uri]
+
     graph
   end
 end
